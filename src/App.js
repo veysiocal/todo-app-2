@@ -1,14 +1,19 @@
-import AddTodo from "./components/AddTodo";
-import Todos from "./components/Todos";
-import TodoProvider, { Context } from "./context/TodoContext";
+import { Route, Routes } from "react-router-dom";
+import Header from "./components/UI/Header";
+import Login from "./pages/Login";
+import Todo from "./pages/Todo";
 
 function App() {
 
   return (
-    <TodoProvider>
-      <AddTodo />
-      <Todos />
-    </TodoProvider>
+    <>
+      <Header />
+      <hr />
+      <Routes>
+        <Route path="/" element={<Todo />} />
+        <Route path="login" element={<Login />} />
+      </Routes>
+    </>
   );
 }
 

@@ -13,7 +13,7 @@ const AddTodo = () => {
 
     const addTodoSubmitHandler = e => {
         e.preventDefault();
-        setTodos(todos => [...todos, {text: todo, id: todos.length, isDone: false, update: false,} ])
+        setTodos(todos => [...todos, {text: todo, id: todos.length, isDone: false, update: false} ])
         setTodo("")
     };
 

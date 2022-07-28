@@ -7,6 +7,8 @@ export default function Todos() {
 
   const [showTodos, setShowTodos] = useState(todos);
 
+  const [searchInput, setSearchInput] = useState();
+
   useEffect(() => {
     setShowTodos(todos)
   }, [todos])
@@ -23,6 +25,16 @@ export default function Todos() {
     setShowTodos(todos)
   }
 
+  const searchHandler = e => {
+    setSearchInput(e.target.value);
+
+    if (searchInput !== undefined) {
+      const ddd = todos.filter(todo => todo.text.includes(searchInput));
+      setShowTodos(ddd)
+    }
+  };
+
+
   return (
     <>
       <div>
@@ -30,6 +42,8 @@ export default function Todos() {
         <button onClick={showNotCompletedTodos}>Tamamlanmayanları Göster</button>
         <button onClick={showAllTodos}>Bütün Todoları Göster</button>
       </div>
+      <input placeholder="Todolarda ara..." value={searchInput} onChange={searchHandler}></input>
+      <hr />
       <ul>
         {showTodos.length === 0 && <p>Hiç todo yok.</p>}
         {showTodos.length !== 0 && showTodos.map(todo => <TodoItem todo={todo.text} key={todo.id} id={todo.id} isDone={todo.isDone} update={todo.update} />)}

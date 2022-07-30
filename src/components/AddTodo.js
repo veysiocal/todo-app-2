@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useTodoContext } from "../context/TodoContext";
+import classes from './AddTodo.module.css';
 
 const AddTodo = () => {
 
@@ -18,8 +19,8 @@ const AddTodo = () => {
     };
 
     return (
-        <form onSubmit={addTodoSubmitHandler}>
-            <input placeholder="Todo Ekle" onChange={addTodoHandler} value={todo}></input>
+        <form onSubmit={addTodoSubmitHandler} className={classes.form}>
+            <input placeholder="Todo Ekle" onChange={addTodoHandler} value={todo} className={classes.todo_input}></input>
             <button type="submit" >Ekle</button>
         </form>
     )

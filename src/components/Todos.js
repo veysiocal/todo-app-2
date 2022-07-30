@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useTodoContext } from "../context/TodoContext";
 import TodoItem from "./TodoItem";
 
+import classes from './Todos.module.css';
+
 export default function Todos() {
   const { todos, setTodos } = useTodoContext();
 
@@ -37,7 +39,7 @@ export default function Todos() {
 
   return (
     <>
-      <div>
+      <div className={classes.main_div}>
         <button onClick={showCompletedTodos}>Tamamlananları Göster</button>
         <button onClick={showNotCompletedTodos}>Tamamlanmayanları Göster</button>
         <button onClick={showAllTodos}>Bütün Todoları Göster</button>

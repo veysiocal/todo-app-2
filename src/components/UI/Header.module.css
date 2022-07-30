@@ -1,0 +1,10 @@
+.main_header {
+    background: lightgreen;
+}
+
+.nav_link {
+    font-weight: bold;
+    font-size: 24px;
+    margin: 0 200px;
+    text-decoration: none;
+}

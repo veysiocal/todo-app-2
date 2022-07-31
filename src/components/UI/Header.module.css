@@ -1,10 +1,17 @@
 .main_header {
     background: lightgreen;
+    display: flex;
+}
+
+.nav_links {
+    width: 80%;
+    margin: 4px auto;
+    display: flex;
+    justify-content: space-around;
 }
 
 .nav_link {
     font-weight: bold;
     font-size: 24px;
-    margin: 0 200px;
     text-decoration: none;
 }

@@ -19,9 +19,9 @@ const AddTodo = () => {
     };
 
     return (
-        <form onSubmit={addTodoSubmitHandler} className={classes.form}>
-            <input placeholder="Todo Ekle" onChange={addTodoHandler} value={todo} className={classes.todo_input}></input>
-            <button type="submit" >Ekle</button>
+        <form onSubmit={addTodoSubmitHandler} className={classes.addTodoForm}>
+            <input placeholder="Todo Ekle" onChange={addTodoHandler} value={todo} className={classes.addTodoInput}></input>
+            <button type="submit" className={classes.addTodoButton}>Ekle</button>
         </form>
     )
 };

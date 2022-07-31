@@ -39,20 +39,20 @@ export default function Todos() {
 
   return (
     <>
-      <div className={classes.main_div}>
-        <button onClick={showCompletedTodos}>Tamamlananları Göster</button>
-        <button onClick={showNotCompletedTodos}>Tamamlanmayanları Göster</button>
-        <button onClick={showAllTodos}>Bütün Todoları Göster</button>
+      <div className={classes.filterSection}>
+        <input placeholder="Todolarda ara..." value={searchInput} onChange={searchHandler} className={classes.filterInput}></input>
+        <button onClick={showCompletedTodos} className={classes.filterButton}>Tamamlananları Göster</button>
+        <button onClick={showNotCompletedTodos} className={classes.filterButton}>Tamamlanmayanları Göster</button>
+        <button onClick={showAllTodos} className={classes.filterButton}>Bütün Todoları Göster</button>
       </div>
-      <input placeholder="Todolarda ara..." value={searchInput} onChange={searchHandler}></input>
       <hr />
-      <ul>
-        {showTodos.length === 0 && <p>Hiç todo yok.</p>}
-        {showTodos.length !== 0 && showTodos.map(todo => <TodoItem todo={todo.text} key={todo.id} id={todo.id} isDone={todo.isDone} update={todo.update} />)}
-        <hr />
-        <pre>{JSON.stringify(todos, null, 2)}</pre>
-      </ul>
+      <div className={classes.todosDiv}>
+        <h1>Todolarım</h1>
+        <ul className={classes.todoList}>
+          {showTodos.length === 0 && <p>Hiç todo yok.</p>}
+          {showTodos.length !== 0 && showTodos.map(todo => <TodoItem todo={todo.text} key={todo.id} id={todo.id} isDone={todo.isDone} update={todo.update} />)}
+        </ul>
+      </div>
     </>
-
   )
 }

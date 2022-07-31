@@ -1,0 +1,45 @@
+.todoItem {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid gray;
+    margin-top: 8px;
+    padding: 8px;
+    border-radius: 32px;
+    background: lightgreen;
+    height: 80px;
+}
+
+.todoItemButtons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 30%;
+
+}
+
+.completeTodo {
+    margin: 8px;
+}
+.todoItemButton {
+    padding: 5px;
+    border-radius: 8px;
+    margin-left: 5px;
+}
+
+.updateTodoForm {
+    width: 60%;
+}
+
+.updateTodoInput {
+    width: 75%;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.updateTodoButton {
+    padding: 8px;
+    border-radius: 8px;
+}
